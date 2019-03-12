@@ -5,7 +5,9 @@
 @endsection
 
 @section("contenido")
-    <p>Estás en el inicio y te has loggeado correctamente</p>
+    <form action="{{route('equipos.index')}}">
+        <input type="submit" value="Equipos" />
+    </form>
 @endsection
 
 @section("pie")
