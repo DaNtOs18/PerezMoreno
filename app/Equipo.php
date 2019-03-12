@@ -14,4 +14,12 @@ class Equipo extends Model
     {
         return $this->hasMany("App\Incidencia");
     }
+
+    protected $fillable=[
+        "tipo",
+        "marca",
+        "modelo",
+        "garantia"
+    ];
+
 }

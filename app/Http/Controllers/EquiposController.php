@@ -26,7 +26,7 @@ class EquiposController extends Controller
      */
     public function create()
     {
-        //
+        return view("equipos.create");
     }
 
     /**
@@ -37,7 +37,13 @@ class EquiposController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $equipo = new Equipo();
+        $equipo->tipo=$request->tipo;
+        $equipo->marca=$request->marca;
+        $equipo->modelo=$request->modelo;
+        $equipo->garantia=$request->garantia;
+        $equipo->save();
+        return redirect("/equipos");
     }
 
     /**

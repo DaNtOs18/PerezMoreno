@@ -23,6 +23,10 @@
             </tr>
         @endforeach
     </table>
+    <br>
+    <form action="{{route('equipos.create')}}">
+        <input type="submit" value="Dar de alta nuevo equipo" />
+    </form>
 @endsection
 
 @section("pie")
