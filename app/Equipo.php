@@ -19,7 +19,8 @@ class Equipo extends Model
         "tipo",
         "marca",
         "modelo",
-        "garantia"
+        "garantia",
+        "especificaciones"
     ];
 
 }

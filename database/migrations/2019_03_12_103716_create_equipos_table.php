@@ -19,6 +19,7 @@ class CreateEquiposTable extends Migration
             $table->string('marca');
             $table->string('modelo');
             $table->string('garantia');
+            $table->longText('especificaciones');
             $table->timestamps();
         });
     }
