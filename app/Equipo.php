@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Equipo extends Model
 {
     public function user(){
-        return $this->belongsToMany("App\User");
+        return $this->belongsTo("App\User");
     }
 
     public function incidencias()

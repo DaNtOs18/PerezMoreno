@@ -38,11 +38,18 @@ class EquiposController extends Controller
     public function store(Request $request)
     {
         $equipo = new Equipo();
+        $user = \Auth::user();
         $equipo->tipo=$request->tipo;
         $equipo->marca=$request->marca;
         $equipo->modelo=$request->modelo;
         $equipo->garantia=$request->garantia;
+
+
+        $equipo->user_id=$user->id;
         $equipo->save();
+
+        /*$user = Auth::user();
+        $user->equipos()->attach($equipo->id);*/
         return redirect("/equipos");
     }
 
