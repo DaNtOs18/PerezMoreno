@@ -1,20 +1,22 @@
 @extends("../layouts.plantilla")
 <title>Equipos</title>
-@section("cabecera")
-    <h1>Equipos Informáticos</h1>
-@endsection
+@section("body")
 
-@section("contenido")
-    <table border="1">
+@section("h1") Equipos Informáticos @endsection
+
+    <table class="table">
+        <thead class="thead-dark">
         <tr>
-            <th>Editar</th>
-            <th>Id</th>
-            <th>Tipo</th>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>Límite de la Garantía</th>
-            <th>Especificaciones</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Id</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Límite de la Garantía</th>
+            <th scope="col">Especificaciones</th>
         </tr>
+        </thead>
+        <tbody>
         @foreach($equipos as $equipo)
             <tr>
                 <td><a href="{{route('equipos.edit', $equipo->id)}}">Click</a></td>
@@ -26,17 +28,15 @@
                 <td><a href="{{route('equipos.show', $equipo->id)}}">Mostrar</a></td>
             </tr>
         @endforeach
+        </tbody>
     </table>
     <br>
-    <form action="{{route('equipos.create')}}">
-        <input type="submit" value="Dar de alta nuevo equipo" />
+    <form action="{{route('equipos.create')}}" class="text-center">
+        <input type="submit" class="btn btn-outline-secondary" value="Dar de alta nuevo equipo" />
     </form>
     <br>
-    <form action="/">
-        <input type="submit" value="Volver"/>
+    <form action="/" class="text-center">
+        <input type="submit" class="btn btn-outline-secondary" value="Volver"/>
     </form>
 @endsection
 
-@section("pie")
-
-@endsection

@@ -1,15 +1,10 @@
 @extends("../layouts.plantilla")
 <title>Inicio</title>
-@section("cabecera")
-<h1>INICIO</h1>
-@endsection
+@section("h1") INICIO @endsection
+@section("body")
 
-@section("contenido")
-    <form action="{{route('equipos.index')}}">
-        <input type="submit" value="Equipos" />
+    <form action="{{route('equipos.index')}}" class="text-center">
+        <input type="submit" class="btn btn-outline-secondary" value="Equipos" />
     </form>
-@endsection
-
-@section("pie")
 
 @endsection

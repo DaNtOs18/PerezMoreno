@@ -1,35 +1,34 @@
 @extends("../layouts.plantilla")
-<title>Equipos</title>
-@section("cabecera")
-    <h1>Equipos Informáticos</h1>
-@endsection
+<title>Alta Nuevo Equipo</title>
+@section("body")
 
-@section("contenido")
+@section("h1") Alta Nuevo Equipo @endsection
+
     <form method="post" action="/equipos">
-        <table>
-            <tr>
-                <td>Tipo:</td>
+        <table class="table">
+            <tr class="table-secondary">
+                <th scope="col">Tipo:</th>
                 <td>
                     <input type="text" name="tipo">
                     {{csrf_field()}}
                 </td>
             </tr>
             <tr>
-                <td>Marca:</td>
+                <th scope="col">Marca:</th>
                 <td>
                     <input type="text" name="marca">
                     {{csrf_field()}}
                 </td>
             </tr>
-            <tr>
-                <td>Modelo:</td>
+            <tr class="table-secondary">
+                <th scope="col">Modelo:</th>
                 <td>
                     <input type="text" name="modelo">
                     {{csrf_field()}}
                 </td>
             </tr>
             <tr>
-                <td>Garantía:</td>
+                <th scope="col">Garantía:</th>
                 <td>
                     <input type="text" name="garantia">
                     {{csrf_field()}}
@@ -37,20 +36,17 @@
             </tr>
             <tr>
                 <td>
-                    <input type="submit" name="enviar" value="Enviar">
+                    <input type="submit" class="btn btn-outline-secondary" name="enviar" value="Enviar">
                 </td>
                 <td>
-                    <input type="reset" name="borrar" value="Limpiar Campos">
+                    <input type="reset" class="btn btn-outline-secondary" name="borrar" value="Limpiar Campos">
                 </td>
             </tr>
         </table>
     </form>
 
-    <form action="{{route('equipos.index')}}">
-        <input type="submit" value="Volver"/>
+    <form action="{{route('equipos.index')}}" class="text-center">
+        <input type="submit" class="btn btn-outline-secondary" value="Volver"/>
     </form>
 @endsection
 
-@section("pie")
-
-@endsection
