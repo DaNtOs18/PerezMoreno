@@ -16,6 +16,7 @@ class Equipo extends Model
     }
 
     protected $fillable=[
+        "user_id",
         "tipo",
         "marca",
         "modelo",

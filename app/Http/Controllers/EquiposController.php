@@ -50,8 +50,6 @@ class EquiposController extends Controller
 
         $equipo->save();
 
-        /*$user = Auth::user();
-        $user->equipos()->attach($equipo->id);*/
         return redirect("/equipos");
     }
 
@@ -74,7 +72,11 @@ class EquiposController extends Controller
      */
     public function edit($id)
     {
-        //
+        $equipo = Equipo::findOrFail($id);
+        $users = User::all();
+
+        return view("equipos.edit", compact("equipo"), compact("users"));
+
     }
 
     /**
@@ -86,7 +88,9 @@ class EquiposController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $equipo = Equipo::findOrFail($id);
+        $equipo->update($request->all());
+        return redirect("/equipos");
     }
 
     /**
@@ -97,6 +101,8 @@ class EquiposController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $equipo = Equipo::findOrFail($id);
+        $equipo->delete();
+        return redirect("/equipos");
     }
 }
