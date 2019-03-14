@@ -15,11 +15,11 @@ class CreateEquiposTable extends Migration
     {
         Schema::create('equipos', function (Blueprint $table) {
             $table->bigIncrements('id', true);
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->string('tipo');
-            $table->string('marca');
-            $table->string('modelo');
-            $table->string('garantia');
+            $table->string('marca')->nullable();
+            $table->string('modelo')->nullable();
+            $table->string('garantia')->nullable();
             $table->longText('especificaciones')->nullable();
             //$table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

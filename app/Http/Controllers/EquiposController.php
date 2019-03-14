@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Equipo;
+use App\User;
 use Illuminate\Http\Request;
 
 class EquiposController extends Controller
@@ -26,7 +27,8 @@ class EquiposController extends Controller
      */
     public function create()
     {
-        return view("equipos.create");
+        $users = User::all();
+        return view("equipos.create", compact("users"));
     }
 
     /**
@@ -44,6 +46,7 @@ class EquiposController extends Controller
         $equipo->marca = $request->marca;
         $equipo->modelo = $request->modelo;
         $equipo->garantia = $request->garantia;
+        $equipo->user_id = $request->user_id;
 
         $equipo->save();
 

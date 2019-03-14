@@ -14,7 +14,7 @@
             <th scope="col">Modelo</th>
             <th scope="col">Límite de la Garantía</th>
             <th scope="col">Especificaciones</th>
-            <th scope="col">Registrado por</th>
+            <th scope="col">Asigando a</th>
         </tr>
         </thead>
         <tbody>
