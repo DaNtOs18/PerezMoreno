@@ -14,6 +14,7 @@
             <th scope="col">Modelo</th>
             <th scope="col">Límite de la Garantía</th>
             <th scope="col">Especificaciones</th>
+            <th scope="col">Registrado por</th>
         </tr>
         </thead>
         <tbody>
@@ -26,6 +27,7 @@
                 <td>{{$equipo->modelo}}</td>
                 <td>{{$equipo->garantia}}</td>
                 <td><a href="{{route('equipos.show', $equipo->id)}}">Mostrar</a></td>
+                <td>{{$equipo::find($equipo->id)->user->name}}</td>
             </tr>
         @endforeach
         </tbody>

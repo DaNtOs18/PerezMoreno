@@ -14,9 +14,9 @@ class EquiposController extends Controller
      */
     public function index()
     {
-        $equipos=Equipo::all();
+        $equipos = Equipo::all();
 
-        return view("equipos.index",compact("equipos"));
+        return view("equipos.index", compact("equipos"));
     }
 
     /**
@@ -32,20 +32,19 @@ class EquiposController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $equipo = new Equipo();
-        $user = \Auth::user();
-        $equipo->tipo=$request->tipo;
-        $equipo->marca=$request->marca;
-        $equipo->modelo=$request->modelo;
-        $equipo->garantia=$request->garantia;
+        /*$user = \Auth::user();
+        $equipo->user_id = $user->id;*/ //Esta línea y la anterior permiten tomar los datos del usuario activo
+        $equipo->tipo = $request->tipo;
+        $equipo->marca = $request->marca;
+        $equipo->modelo = $request->modelo;
+        $equipo->garantia = $request->garantia;
 
-
-        $equipo->user_id=$user->id;
         $equipo->save();
 
         /*$user = Auth::user();
@@ -56,7 +55,7 @@ class EquiposController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -67,7 +66,7 @@ class EquiposController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -78,8 +77,8 @@ class EquiposController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -90,7 +89,7 @@ class EquiposController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
